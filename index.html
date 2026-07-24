@@ -242,16 +242,15 @@
   .copy-btn:hover{ color:var(--amber); border-color:var(--amber); }
   .copy-btn.copied{ color:#0C0C0E; background:var(--amber); border-color:var(--amber); }
 
-  /* BOOKING */
-  .setup-note{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-dim); background:var(--bg-raised);
-    border:1px solid var(--line); border-left:3px solid var(--amber); padding:14px 18px; border-radius:6px;
+  .booking-clean{
+    background:var(--bg-raised); border:1px solid var(--line); border-radius:14px;
+    padding:32px; display:flex; align-items:center; justify-content:space-between;
+    gap:24px; flex-wrap:wrap;
   }
-  .booking-frame{ background:var(--bg-raised); border:1px solid var(--line); border-radius:14px; padding:8px; position:relative; min-height:340px; }
-  .booking-fallback{ padding:48px 32px; text-align:center; }
-  .booking-fallback h3{ font-family:'Bricolage Grotesque', sans-serif; margin:10px 0; }
-  .booking-fallback p{ color:var(--ink-dim); font-size:14px; margin-bottom:20px; max-width:44ch; margin-left:auto; margin-right:auto; }
-
+  .booking-clean h3{ font-family:'Bricolage Grotesque', sans-serif; font-weight:600; font-size:19px; margin-bottom:6px; }
+  .booking-clean p{ color:var(--ink-dim); font-size:14px; }
+  .booking-clean button{ font-family:'IBM Plex Mono', monospace; }
+  
   /* GALLERY */
   .gallery-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; perspective:1000px; }
   .gallery-grid figure{ margin:0; border-radius:12px; overflow:hidden; border:1px solid var(--line); position:relative; }
@@ -558,14 +557,17 @@
         with the real link to enable live booking. Until then, this section shows the email
         fallback below.
       </div>
-      <div class="booking-frame reveal">
-        <div id="cal-inline-embed" style="width:100%; height:600px; overflow:auto; display:none;"></div>
-        <div class="booking-fallback" id="bookingFallback">
-          <span class="mono" style="color:var(--amber); font-family:'IBM Plex Mono',monospace; font-size:12px;">Calendar not connected yet</span>
-          <h3>Booking isn't wired up yet</h3>
-          <p>Reach out directly and we'll find a time that works.</p>
-          <a href="mailto:directorpuru@gmail.com?subject=Let's%20talk" class="btn btn-ghost">Email instead →</a>
+      <div class="booking-clean reveal">
+        <div>
+          <h3>30-minute call, real slots</h3>
+          <p>Pick a time that works — confirms instantly, no back-and-forth.</p>
         </div>
+        <button
+          class="btn btn-primary"
+          data-cal-namespace="30min"
+         data-cal-link="purukaka/30min"
+          data-cal-config='{"layout":"month_view"}'
+        >Check availability →</button>
       </div>
     </div>
   </section>
@@ -734,15 +736,9 @@
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
   // Cal.com booking embed — only initializes once a real calLink is set
-  const CAL_LINK = "YOUR-CALCOM-USERNAME/consultation";
-  if (!CAL_LINK.includes("YOUR-CALCOM-USERNAME")) {
-    document.getElementById('cal-inline-embed').style.display = 'block';
-    document.getElementById('bookingFallback').style.display = 'none';
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", { origin: "https://cal.com" });
-    Cal("inline", { elementOrSelector: "#cal-inline-embed", calLink: CAL_LINK });
-    Cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
-  }
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "30min", { origin: "https://cal.com" });
+  Cal.ns["30min"]("ui", { hideEventTypeDetails: false, layout: "month_view" });
 
   // reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
