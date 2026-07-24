@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purushottam Adhikari — Puru Kaka</title>
+<meta name="description" content="Purushottam Adhikari (Puru Kaka) — filmmaker, brand strategist, and founder of Okay Pasal. Film direction, marketing, strategy, visual, and e-commerce services.">
+<link rel="canonical" href="https://purukaka.com/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E0D13">
+
+<!--
+  This is the alternate "bold" skin — same content and section IDs as index.html,
+  different visual system. Swap in for index.html if you want the energetic
+  creator/AI-builder register instead of the minimal editorial one.
+  Email, social links, and timeline years are already filled in
+  (same as index.html). This version has no photos to replace.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0E0D13;
+    --card:#17151F;
+    --card-hover:#1D1A28;
+    --ink:#F4F2FA;
+    --muted:#9C97AD;
+    --violet:#9D5CFF;
+    --lime:#D4FF5C;
+    --border:rgba(255,255,255,0.09);
+    --max:1040px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Inter',sans-serif; font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--violet);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--lime); outline-offset:3px;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; font-weight:600; margin:0; color:var(--ink);}
+  .mono{
+    font-family:'JetBrains Mono',monospace; text-transform:uppercase;
+    letter-spacing:0.1em; font-size:12px; color:var(--violet);
+  }
+  section{padding:100px 0;}
+  section[id]{scroll-margin-top:100px;}
+  @media (max-width:700px){ section{padding:64px 0;} }
+
+  /* subtle ambient background glow */
+  body::before{
+    content:''; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(600px 400px at 15% 0%, rgba(157,92,255,0.14), transparent 60%),
+      radial-gradient(500px 350px at 90% 20%, rgba(212,255,92,0.07), transparent 60%);
+  }
+
+  /* NAV */
+  nav.top{padding:26px 0; position:sticky; top:0; background:rgba(14,13,19,0.82); backdrop-filter:blur(10px); z-index:10; border-bottom:1px solid var(--border);}
+  nav.top .wrap{display:flex; justify-content:space-between; align-items:center;}
+  nav.top .name{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px;}
+  nav.top .name span{color:var(--lime);}
+  nav.top .links{display:flex; gap:26px;}
+  nav.top .links a{font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); text-decoration:none;}
+  nav.top .links a:hover{color:var(--lime);}
+  @media (max-width:520px){ nav.top .links{gap:14px;} nav.top .links a:nth-child(3){display:none;} }
+
+  /* HERO — terminal style */
+  .hero{padding-top:90px;}
+  .terminal{
+    background:var(--card); border:1px solid var(--border); border-radius:10px;
+    padding:20px 24px; max-width:520px; font-family:'JetBrains Mono',monospace; font-size:13px;
+    color:var(--muted); margin-bottom:36px;
+  }
+  .terminal .dots{display:flex; gap:6px; margin-bottom:14px;}
+  .terminal .dots span{width:9px; height:9px; border-radius:50%; background:#3a3745; display:inline-block;}
+  .terminal .line{margin:0;}
+  .terminal .prompt{color:var(--lime);}
+  .terminal .out{color:var(--ink);}
+  .cursor{display:inline-block; width:7px; height:14px; background:var(--lime); vertical-align:middle; animation:blink 1s step-end infinite;}
+  @keyframes blink{50%{opacity:0;}}
+  @media (prefers-reduced-motion: reduce){ .cursor{animation:none;} }
+
+  .hero h1{
+    font-size:clamp(34px, 6vw, 58px); line-height:1.08; max-width:14ch;
+    background:linear-gradient(90deg, var(--ink) 40%, var(--violet));
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .hero p.tagline{margin:22px 0 0; max-width:56ch; color:var(--muted); font-size:18px;}
+  .cta-row{display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;}
+  .btn{
+    font-family:'JetBrains Mono',monospace; font-size:13px; text-transform:uppercase; letter-spacing:0.05em;
+    text-decoration:none; padding:13px 22px; border-radius:6px; border:1px solid var(--border); color:var(--ink);
+    display:inline-block; transition:transform .15s ease, border-color .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px); border-color:var(--violet);}
+  .btn.primary{background:linear-gradient(90deg, var(--violet), #7A3FE0); border:none; color:#fff;}
+  .btn.primary:hover{background:linear-gradient(90deg, #AC72FF, var(--violet));}
+
+  .section-head{margin-bottom:40px;}
+  .section-head .mono{display:block; margin-bottom:10px;}
+  .section-head h2{font-size:30px;}
+
+  /* ABOUT */
+  .bio{max-width:62ch; color:var(--muted); font-size:17px;}
+  .timeline{margin-top:44px; display:grid; gap:16px;}
+  .tl-card{
+    background:var(--card); border:1px solid var(--border); border-radius:10px;
+    padding:22px 24px; display:grid; grid-template-columns:90px 1fr; gap:20px;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .tl-card:hover{border-color:var(--violet); background:var(--card-hover);}
+  .tl-year{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--lime);}
+  .tl-card h3{font-size:17px; font-family:'Inter',sans-serif; font-weight:600; margin-bottom:4px;}
+  .tl-card p{margin:0; color:var(--muted); font-size:14px;}
+  @media (max-width:520px){ .tl-card{grid-template-columns:1fr; gap:6px;} }
+
+  /* CARD GRID — services / ventures / blog */
+  .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:18px;}
+  .grid-card{
+    position:relative; background:var(--card); border:1px solid var(--border); border-radius:12px;
+    padding:26px; transition:transform .18s ease, border-color .18s ease, background .18s ease;
+  }
+  .grid-card:hover{transform:translateY(-4px); border-color:transparent; background:var(--card-hover);
+    box-shadow:0 0 0 1px var(--violet), 0 12px 30px -12px rgba(157,92,255,0.35);}
+  .grid-card .tag{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--lime); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:14px;}
+  .grid-card h3{font-size:19px; margin-bottom:10px;}
+  .grid-card ul{margin:0; padding-left:18px; color:var(--muted); font-size:14px;}
+  .grid-card li{margin-bottom:5px;}
+  .grid-card p{color:var(--muted); font-size:14.5px; margin:0;}
+  .grid-card .status{display:inline-block; margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--violet); background:rgba(157,92,255,0.12); padding:4px 10px; border-radius:20px;}
+
+  /* BLOG */
+  .post-card{display:block; text-decoration:none; color:var(--ink);}
+  .post-card .post-date{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); display:block; margin-top:10px;}
+  .archive-link{margin-top:26px; display:inline-block; font-family:'JetBrains Mono',monospace; font-size:13px; text-transform:uppercase; letter-spacing:0.05em; color:var(--lime); text-decoration:none;}
+  .archive-link:hover{text-decoration:underline;}
+
+  /* CONTACT */
+  .contact-card{
+    background:var(--card); border:1px solid var(--border); border-radius:16px; padding:48px;
+    text-align:left;
+  }
+  .contact-email{
+    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(24px,4vw,32px);
+    text-decoration:none; display:inline-block; margin-bottom:28px; color:var(--lime);
+  }
+  .contact-email:hover{color:var(--violet);}
+  .social-row{display:flex; gap:24px; flex-wrap:wrap;}
+  .social-row a{font-family:'JetBrains Mono',monospace; font-size:13px; text-transform:uppercase; letter-spacing:0.05em; text-decoration:none; color:var(--muted);}
+  .social-row a:hover{color:var(--lime);}
+
+  footer{padding:40px 0 56px; border-top:1px solid var(--border);}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  footer .mono{font-size:11px; color:var(--muted);}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <span class="name">puru<span>kaka</span></span>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#blog">Writing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="terminal">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <p class="line"><span class="prompt">$</span> whoami</p>
+      <p class="line out">purushottam_adhikari — aka puru_kaka<span class="cursor"></span></p>
+    </div>
+    <h1>Stories, built into ventures.</h1>
+    <p class="tagline">Filmmaker, brand strategist, and founder of Okay Pasal. I direct film, build brands, and run businesses — this is where the work lives.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn primary">Get in touch</a>
+      <a href="#services" class="btn">See services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">// About</span>
+      <h2>A builder who tells stories.</h2>
+    </div>
+    <p class="bio">I started Okay Pasal in 2018 because I wanted to understand commerce from the inside — not as theory, but as a business I had to run. Since then, I've trained in film direction at Kantipur Film Academy and worked on photography and visual production at Percept Media Production. Same instinct every time: understand the audience, shape the story, ship the work.</p>
+
+    <div class="timeline">
+      <div class="tl-card">
+        <span class="tl-year">2018</span>
+        <div><h3>Founded Okay Pasal Pvt. Ltd.</h3><p>Started and ran an e-commerce venture from the ground up — sourcing, operations, and growth.</p></div>
+      </div>
+      <div class="tl-card">
+        <span class="tl-year">2021–2023</span>
+        <div><h3>Diploma in Film Direction, Kantipur Film Academy</h3><p>Completed a diploma in film direction — narrative structure, on-set process, and production craft.</p></div>
+      </div>
+      <div class="tl-card">
+        <span class="tl-year">2019</span>
+        <div><h3>Diploma in Photography &amp; Videography, Percept Media</h3><p>Completed a diploma in photography and videography — building a practical eye for image, light, and motion.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">// Services</span>
+      <h2>Five ways to work together.</h2>
+    </div>
+    <div class="grid">
+      <div class="grid-card">
+        <span class="tag">01 · Film</span>
+        <h3>Film</h3>
+        <ul><li>Direction for short film and narrative work</li><li>Brand and documentary-style film</li><li>On-set production consulting</li></ul>
+      </div>
+      <div class="grid-card">
+        <span class="tag">02 · Marketing</span>
+        <h3>Marketing</h3>
+        <ul><li>Social media strategy and content calendars</li><li>Campaign planning and execution</li><li>Paid ad direction</li></ul>
+      </div>
+      <div class="grid-card">
+        <span class="tag">03 · Strategy</span>
+        <h3>Strategy</h3>
+        <ul><li>Business and go-to-market planning</li><li>Brand positioning</li><li>Venture and product strategy</li></ul>
+      </div>
+      <div class="grid-card">
+        <span class="tag">04 · Visual</span>
+        <h3>Visual</h3>
+        <ul><li>Photography — product, portrait, event</li><li>Videography — event and short-form video</li><li>Photo direction</li><li>Visual identity development</li></ul>
+      </div>
+      <div class="grid-card">
+        <span class="tag">05 · E-commerce</span>
+        <h3>E-commerce</h3>
+        <ul><li>Store setup and operations</li><li>Product and catalog strategy</li><li>Digital storefront consulting</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section id="ventures">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">// Ventures</span>
+      <h2>Proof of work.</h2>
+    </div>
+    <div class="grid">
+      <div class="grid-card">
+        <span class="tag">File 01</span>
+        <h3>Okay Pasal Pvt. Ltd.</h3>
+        <p>Founded in 2018. An e-commerce venture built and operated from the ground up — sourcing, logistics, and growth.</p>
+        <span class="status">Active</span>
+      </div>
+      <div class="grid-card">
+        <span class="tag">File 02</span>
+        <h3>Short Film Direction</h3>
+        <p>Direction work developed through training at Kantipur Film Academy — narrative short-form projects.</p>
+        <span class="status">Trained</span>
+      </div>
+      <div class="grid-card">
+        <span class="tag">File 03</span>
+        <h3>Diploma in Photography &amp; Videography</h3>
+        <p>Diploma in photography and videography from Percept Media — building a practical command of image, light, and motion.</p>
+        <span class="status">Completed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">// Writing</span>
+      <h2>Notes, published elsewhere.</h2>
+    </div>
+    <p class="bio" style="margin-bottom:28px;">Writing lives on adhikaripurushottam.com.np — this is a live index, not a copy.</p>
+    <div class="grid">
+      <a href="https://adhikaripurushottam.com.np" class="grid-card post-card" target="_blank" rel="noopener">
+        <span class="tag">Latest</span>
+        <h3>Posts on adhikaripurushottam.com.np</h3>
+        <span class="post-date">Visit the archive →</span>
+      </a>
+    </div>
+    <a href="https://adhikaripurushottam.com.np" class="archive-link" target="_blank" rel="noopener">Full archive →</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">// Contact</span>
+      <h2>Start a conversation.</h2>
+    </div>
+    <div class="contact-card">
+      <a href="mailto:purukaka1111@gmail.com" class="contact-email">purukaka1111@gmail.com</a>
+      <div class="social-row">
+        <a href="https://instagram.com/1purukaka" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@1purukaka" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://facebook.com/1purukaka" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://twitter.com/1purukaka" target="_blank" rel="noopener">Twitter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">© <span id="year"></span> Purushottam Adhikari</span>
+    <span class="mono">Puru Kaka — purukaka.com</span>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

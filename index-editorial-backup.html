@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purushottam Adhikari — Puru Kaka</title>
+<meta name="description" content="Purushottam Adhikari (Puru Kaka) — filmmaker, brand strategist, and founder of Okay Pasal. Film direction, marketing, strategy, visual, and e-commerce services.">
+<link rel="canonical" href="https://purukaka.com/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#33513F">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Puru Kaka">
+<meta property="og:title" content="Purushottam Adhikari — Puru Kaka">
+<meta property="og:description" content="Filmmaker, brand strategist, and founder of Okay Pasal.">
+<meta property="og:url" content="https://purukaka.com/">
+<meta property="og:image" content="https://purukaka.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Purushottam Adhikari",
+  "alternateName": "Puru Kaka",
+  "url": "https://purukaka.com",
+  "jobTitle": ["Filmmaker", "Brand Strategist", "Founder"],
+  "founder": {"@type": "Organization", "name": "Okay Pasal Pvt. Ltd.", "foundingDate": "2018"},
+  "sameAs": ["https://instagram.com/1purukaka","https://youtube.com/@1purukaka","https://facebook.com/1purukaka","https://twitter.com/1purukaka"]
+}
+</script>
+
+<!--
+  ══════════════════════════════════════════════════════════════
+  STATUS: real photos are in place (assets/photos/), real blog
+  posts are linked in the Writing section, and email, social
+  links, and About timeline years are already filled in.
+
+  STILL TO DO before publishing:
+  1. Book a Call → connect a real Cal.com link (search "YOUR-CALCOM-USERNAME")
+     to replace the graceful fallback with a live calendar.
+  2. Course details → curriculum bullets in #courses are a reasonable
+     starting draft; edit once real course content exists.
+  ══════════════════════════════════════════════════════════════
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<style>
+  :root{
+    --paper:#F7F5EF;
+    --ink:#1C1B17;
+    --green:#33513F;
+    --green-deep:#22342A;
+    --gold:#B8863B;
+    --gold-deep:#8F6528;
+    --muted:#7A776C;
+    --hairline:#DEDACD;
+    --max:1080px;
+    --col:720px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased;}
+  a{color:var(--green);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--green); outline-offset:3px;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  .col{max-width:var(--col);}
+  .mono{font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.08em; font-size:12px; color:var(--muted);}
+  h1,h2,h3{font-family:'Fraunces',serif; font-weight:500; margin:0; color:var(--ink);}
+  hr.rule{border:none; border-top:1px solid var(--hairline); margin:0;}
+  section{padding:88px 0;}
+  section[id]{scroll-margin-top:96px;}
+  @media (max-width:700px){ section{padding:56px 0;} section[id]{scroll-margin-top:80px;} }
+
+  /* duotone photo treatment — signature element */
+  .photo{position:relative; overflow:hidden; background:var(--green-deep);}
+  #scrollProgress{position:fixed; top:0; left:0; height:2px; background:var(--gold); z-index:60; width:0%;}
+  .photo img{width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.1) brightness(0.92);}
+  .photo::after{content:''; position:absolute; inset:0; background:var(--green); mix-blend-mode:multiply; opacity:0.62; pointer-events:none;}
+  .photo::before{content:''; position:absolute; inset:0; background:var(--paper); mix-blend-mode:soft-light; opacity:0.12; z-index:1; pointer-events:none;}
+
+  /* NAV */
+  nav.top{position:fixed; top:0; left:0; right:0; z-index:20; padding:24px 0; transition:background .3s ease, border-color .3s ease;}
+  nav.top .wrap{display:flex; justify-content:space-between; align-items:center;}
+  nav.top .name{font-family:'Fraunces',serif; font-weight:500; font-size:18px; color:var(--paper); transition:color .3s ease;}
+  nav.top .links{display:flex; gap:24px;}
+  nav.top .links a{font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:rgba(247,245,239,0.78); text-decoration:none; transition:color .3s ease;}
+  nav.top .links a:hover{color:var(--paper);}
+  nav.top.solid{background:var(--paper); border-bottom:1px solid var(--hairline); padding:18px 0;}
+  nav.top.solid .name{color:var(--ink);}
+  nav.top.solid .links a{color:var(--muted);}
+  nav.top.solid .links a:hover{color:var(--green);}
+  @media (max-width:520px){ nav.top .links{gap:14px;} nav.top .links a:nth-child(3){display:none;} }
+
+  /* Mobile hamburger nav */
+  .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px; z-index:30; position:relative;}
+  .nav-toggle span{display:block; width:22px; height:2px; background:var(--paper); margin:5px 0; transition:transform .25s ease, opacity .25s ease, background .25s ease;}
+  nav.top.solid .nav-toggle span{background:var(--ink);}
+  .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  @media (max-width:760px){
+    .nav-toggle{display:block;}
+    nav.top .links{
+      position:fixed; inset:0 0 0 auto; width:min(78vw,320px); height:100vh;
+      background:var(--ink); flex-direction:column; align-items:flex-start; justify-content:center;
+      gap:8px; padding:32px; transform:translateX(100%); transition:transform .32s ease; z-index:25;
+    }
+    nav.top .links.open{transform:translateX(0);}
+    nav.top .links a{color:rgba(247,245,239,0.85); font-size:15px; padding:12px 0; width:100%; border-bottom:1px solid rgba(247,245,239,0.1);}
+    nav.top .links a:nth-child(3){display:block;}
+    .nav-scrim{position:fixed; inset:0; background:rgba(0,0,0,0.4); opacity:0; pointer-events:none; transition:opacity .3s ease; z-index:19;}
+    .nav-scrim.open{opacity:1; pointer-events:auto;}
+  }
+
+  /* Scroll-reveal motion */
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  /* Gradient mesh backdrop for product sections (Courses / AI Tips) */
+  .mesh{position:relative;}
+  .mesh::before{
+    content:''; position:absolute; inset:0; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(480px 320px at 12% 10%, rgba(51,81,63,0.07), transparent 65%),
+      radial-gradient(420px 300px at 92% 30%, rgba(184,134,59,0.09), transparent 60%);
+  }
+
+  /* Credibility strip in hero */
+  .cred-strip{display:flex; gap:10px; flex-wrap:wrap; margin-top:28px;}
+  .cred-pill{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.03em; color:rgba(247,245,239,0.92);
+    background:rgba(247,245,239,0.12); border:1px solid rgba(247,245,239,0.25); padding:6px 12px; border-radius:20px;
+    backdrop-filter:blur(4px);
+  }
+
+  /* COURSES */
+  .course-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  @media (max-width:700px){ .course-grid{grid-template-columns:1fr;} }
+  .course-card{
+    background:var(--paper); border:1px solid var(--hairline); padding:28px; position:relative;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .course-card:hover{transform:translateY(-5px); border-color:var(--gold); box-shadow:0 16px 32px -18px rgba(28,27,23,0.28);}
+  .course-card .icon{width:28px; height:28px; color:var(--gold-deep); margin-bottom:16px;}
+  .course-card .badge{
+    position:absolute; top:24px; right:24px; font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--gold-deep); background:rgba(184,134,59,0.12); padding:4px 10px; border-radius:20px;
+  }
+  .course-card h3{font-size:21px; margin-bottom:6px; padding-right:100px;}
+  .course-card .promise{color:var(--muted); font-size:14.5px; margin-bottom:16px;}
+  .course-card ul{margin:0 0 20px; padding-left:18px; color:var(--ink); font-size:14px;}
+  .course-card li{margin-bottom:6px;}
+  .course-card .cta{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; text-transform:uppercase; letter-spacing:0.05em;
+    color:var(--gold-deep); text-decoration:none; border-bottom:1px solid var(--gold-deep); padding-bottom:2px;
+  }
+  .course-card .cta:hover{color:var(--ink); border-color:var(--ink);}
+
+  /* AI TIPS / PROMPTS */
+  .prompt-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  @media (max-width:700px){ .prompt-grid{grid-template-columns:1fr;} }
+  .prompt-card{background:var(--paper); border:1px solid var(--hairline); padding:22px;}
+  .prompt-card .cat{font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:0.06em; color:var(--green);}
+  .prompt-card h3{font-size:16.5px; margin:8px 0 10px; font-family:'Inter',sans-serif; font-weight:600;}
+  .prompt-card .ptext{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.6; color:var(--ink);
+    background:rgba(28,27,23,0.03); border:1px solid var(--hairline); padding:12px; margin:0 0 12px; white-space:pre-wrap;
+  }
+  .copy-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.05em;
+    background:none; border:1px solid var(--ink); color:var(--ink); padding:7px 14px; cursor:pointer;
+  }
+  .copy-btn:hover{background:var(--ink); color:var(--paper);}
+  .copy-btn.copied{background:var(--green); border-color:var(--green); color:var(--paper);}
+
+  /* CATEGORY FILTER TABS */
+  .filter-row{display:flex; gap:8px; flex-wrap:wrap; margin:24px 0 32px;}
+  .filter-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;
+    background:none; border:1px solid var(--hairline); color:var(--muted); padding:8px 16px; cursor:pointer;
+    border-radius:20px; transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .filter-btn:hover{border-color:var(--gold);}
+  .filter-btn.active{background:var(--ink); border-color:var(--ink); color:var(--paper);}
+  .course-card.hide, .prompt-card.hide{display:none;}
+
+  /* BOOK A CALL */
+  #booking .booking-frame{
+    border:1px solid var(--hairline); background:var(--paper); min-height:500px; position:relative;
+  }
+  #cal-inline-embed{display:none;}
+  #booking .booking-fallback{
+    display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:14px;
+    padding:48px; min-height:500px;
+  }
+  #booking .booking-fallback p{color:var(--muted); max-width:52ch; margin:0;}
+  #booking .setup-note{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--gold-deep); background:rgba(184,134,59,0.1);
+    border:1px dashed var(--gold); padding:12px 16px; max-width:60ch; line-height:1.6;
+  }
+
+  /* GALLERY LIGHTBOX */
+  .masonry .photo{cursor:zoom-in; transition:transform .3s ease;}
+  .masonry .photo:hover{transform:scale(1.015);}
+  .lightbox{
+    position:fixed; inset:0; background:rgba(17,16,13,0.94); z-index:50; display:none;
+    align-items:center; justify-content:center; padding:40px; cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(90vw,900px); max-height:85vh; object-fit:contain; filter:grayscale(1) contrast(1.1);}
+  .lightbox-close{position:absolute; top:24px; right:28px; color:var(--paper); font-family:'IBM Plex Mono',monospace; font-size:13px; background:none; border:1px solid rgba(247,245,239,0.4); padding:8px 14px; cursor:pointer;}
+  .lightbox-close:hover{background:var(--paper); color:var(--ink);}
+
+  /* Hero parallax layer */
+  .hero .photo img{will-change:transform;}
+
+  /* HERO — full bleed duotone photo */
+  .hero{position:relative; height:92vh; min-height:560px; margin-top:0; padding:0; overflow:hidden;}
+  .hero-3d-stage{position:absolute; inset:0; perspective:1400px; perspective-origin:50% 50%; overflow:hidden;}
+  .hero-photo-layer{position:absolute; inset:-30px; transform-style:preserve-3d; transition:transform .25s cubic-bezier(.2,.7,.3,1); will-change:transform;}
+  .hero-photo-layer img{width:100%; height:100%;}
+  #heroParticles{position:absolute; inset:0; z-index:2; pointer-events:none; mix-blend-mode:screen; opacity:0.55;}
+  #hero3dCanvas{position:absolute; inset:0; z-index:2; pointer-events:none; mix-blend-mode:screen; opacity:0.22;}
+
+  /* cursor glow trail — additive, doesn't replace native cursor */
+  .cursor-glow{position:fixed; top:0; left:0; width:26px; height:26px; border-radius:50%; border:1px solid rgba(184,134,59,0.55); pointer-events:none; z-index:999; transform:translate(-50%,-50%); transition:width .2s ease, height .2s ease, border-color .2s ease, background .2s ease; mix-blend-mode:multiply;}
+  .cursor-glow.hovering{width:46px; height:46px; background:rgba(184,134,59,0.08); border-color:var(--gold);}
+  @media (hover:none), (pointer:coarse){ .cursor-glow{ display:none; } }
+
+  /* tilt on venture photos */
+  .file .photo{ transform-style:preserve-3d; will-change:transform; transition:transform .15s ease-out; }
+  .magnetic{ transition:transform .18s ease-out; display:inline-block; }
+  .hero-scrim{position:absolute; inset:0; background:linear-gradient(180deg, rgba(28,27,23,0.15) 0%, rgba(28,27,23,0.05) 40%, rgba(28,27,23,0.75) 100%); z-index:3;}
+  .hero-content{position:absolute; left:0; right:0; bottom:64px; z-index:4; transition:transform .25s cubic-bezier(.2,.7,.3,1); will-change:transform;}
+  @media (max-width:760px){ .hero-3d-stage{perspective:none;} .hero-photo-layer{transform:none !important; inset:0;} }
+  .hero-content .mono{color:rgba(247,245,239,0.75); margin-bottom:16px; display:block;}
+  .hero h1{font-size:clamp(38px,7.5vw,72px); line-height:1.05; font-style:italic; font-weight:400; color:var(--paper); max-width:13ch; letter-spacing:-0.01em;}
+  .hero p.tagline{margin:20px 0 0; max-width:52ch; color:rgba(247,245,239,0.88); font-size:18px;}
+  .cta-row{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .btn{font-family:'IBM Plex Mono',monospace; font-size:13px; text-transform:uppercase; letter-spacing:0.06em; text-decoration:none; padding:12px 20px; border:1px solid var(--paper); color:var(--paper); display:inline-block;}
+  .btn:hover{background:var(--paper); color:var(--ink);}
+  .btn.primary{background:var(--green); border-color:var(--green); color:var(--paper);}
+  .btn.primary:hover{background:var(--paper); color:var(--ink); border-color:var(--paper);}
+  .scroll-cue{position:absolute; right:24px; bottom:64px; z-index:3; writing-mode:vertical-rl; color:rgba(247,245,239,0.7); font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; display:flex; align-items:center; gap:10px;}
+  @media (max-width:700px){ .scroll-cue{display:none;} }
+
+  .section-head{margin-bottom:36px;}
+  .section-head .mono{display:block; margin-bottom:10px;}
+  .section-head h2{font-size:28px;}
+
+  /* ABOUT — two column with portrait */
+  .about-grid{display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:start;}
+  .about-grid .photo{aspect-ratio:4/5; border:1px solid var(--hairline);}
+  .bio{color:var(--ink);}
+  .timeline{margin-top:40px;}
+  .tl-item{display:grid; grid-template-columns:90px 1fr; gap:20px; padding:18px 0; border-top:1px solid var(--hairline);}
+  .tl-item:last-child{border-bottom:1px solid var(--hairline);}
+  .tl-year{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--green);}
+  .tl-text h3{font-size:17px; font-family:'Inter',sans-serif; font-weight:600; margin-bottom:4px;}
+  .tl-text p{margin:0; color:var(--muted); font-size:15px;}
+  @media (max-width:700px){ .about-grid{grid-template-columns:1fr;} .about-grid .photo{max-width:220px;} }
+  @media (max-width:500px){ .tl-item{grid-template-columns:1fr; gap:6px;} }
+
+  /* SERVICES — icon led */
+  .service{padding:28px 0; border-top:1px solid var(--hairline); display:grid; grid-template-columns:48px 1fr; gap:24px;}
+  .service:last-child{border-bottom:1px solid var(--hairline);}
+  .service .icon{width:26px; height:26px; color:var(--green); margin-top:4px;}
+  .service h3{font-size:20px; margin-bottom:8px;}
+  .service ul{margin:10px 0 0; padding-left:18px; color:var(--muted); font-size:15px;}
+  .service li{margin-bottom:4px;}
+  @media (max-width:500px){ .service{grid-template-columns:1fr; gap:8px;} }
+
+  /* VENTURES — photo + case file */
+  .file{display:grid; grid-template-columns:260px 1fr; gap:32px; margin-bottom:40px; align-items:stretch;}
+  .file .photo{aspect-ratio:4/3; border:1px solid var(--hairline);}
+  .file-body{border-left:2px solid var(--green); padding:4px 0 4px 22px;}
+  .file-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px 16px; margin-bottom:10px;}
+  .file-num{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; color:var(--green); text-transform:uppercase;}
+  .file-status{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; color:var(--muted); text-transform:uppercase;}
+  .file-body h3{font-size:21px; margin-bottom:8px;}
+  .file-body p{margin:0; color:var(--ink); max-width:56ch;}
+  .file-body p.meta{color:var(--muted); font-size:14px; margin-top:8px; font-family:'IBM Plex Mono',monospace;}
+  @media (max-width:700px){ .file{grid-template-columns:1fr;} .file .photo{aspect-ratio:16/9;} }
+
+  /* GALLERY — masonry via CSS columns */
+  .masonry{column-count:3; column-gap:14px;}
+  .masonry .photo{margin-bottom:14px; break-inside:avoid; border:1px solid var(--hairline);}
+  .masonry .photo img{width:100%; height:auto; object-fit:cover;}
+  @media (max-width:900px){ .masonry{column-count:2;} }
+  @media (max-width:520px){ .masonry{column-count:1;} }
+  .gallery-caption{margin-top:20px; color:var(--muted); font-size:14px; max-width:56ch;}
+
+  /* BLOG */
+  .post{display:grid; grid-template-columns:96px 1fr auto; gap:18px; align-items:center; padding:18px 0; border-top:1px solid var(--hairline); text-decoration:none; color:var(--ink);}
+  .post:last-of-type{border-bottom:1px solid var(--hairline);}
+  .post .photo{aspect-ratio:4/3; border:1px solid var(--hairline);}
+  .post:hover .post-title{color:var(--green);}
+  .post-title{font-family:'Fraunces',serif; font-size:18px; font-weight:500;}
+  .post-date{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted); white-space:nowrap;}
+  .archive-link{margin-top:24px; display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:13px; text-transform:uppercase; letter-spacing:0.05em;}
+  @media (max-width:500px){ .post{grid-template-columns:64px 1fr; grid-template-areas:"img title" "img date";} .post-date{grid-column:2;} }
+
+  /* CONTACT */
+  .contact-email{font-family:'Fraunces',serif; font-style:italic; font-size:clamp(26px,4vw,34px); text-decoration:none; display:inline-block; margin-bottom:32px; color:var(--ink); border-bottom:1px solid var(--ink);}
+  .contact-email:hover{color:var(--green); border-color:var(--green);}
+  .social-row{display:flex; gap:24px; flex-wrap:wrap;}
+  .social-row a{font-family:'IBM Plex Mono',monospace; font-size:13px; text-transform:uppercase; letter-spacing:0.05em; text-decoration:none; color:var(--muted); padding-bottom:2px; border-bottom:1px solid transparent;}
+  .social-row a:hover{color:var(--green); border-color:var(--green);}
+
+  footer{padding:36px 0 48px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  footer .mono{font-size:11px;}
+
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<div id="scrollProgress"></div>
+
+<nav class="top" id="siteNav">
+  <div class="wrap">
+    <span class="name">Puru Kaka</span>
+    <div class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#courses">Courses</a>
+      <a href="#ai-tips">AI Tips</a>
+      <a href="#booking">Book a Call</a>
+      <a href="#ventures">Work</a>
+      <a href="#blog">Writing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-scrim" id="navScrim"></div>
+
+<!-- HERO -->
+<section class="hero" id="heroSection">
+  <div class="hero-3d-stage" id="hero3dStage">
+    <div class="photo hero-photo-layer" id="heroPhotoLayer">
+      <img src="assets/photos/hero.jpg" alt="Puru Kaka on set, directing" loading="eager">
+    </div>
+    <canvas id="heroParticles" aria-hidden="true"></canvas>
+    <canvas id="hero3dCanvas" aria-hidden="true"></canvas>
+    <div class="hero-scrim"></div>
+  </div>
+  <div class="wrap hero-content" id="heroContent">
+    <span class="mono">Filmmaker · Strategist · Founder</span>
+    <h1>Stories, built into ventures.</h1>
+    <p class="tagline">I'm Purushottam Adhikari — Puru Kaka. I direct film, build brands, and run businesses, from the founding of Okay Pasal to the frame of a shot.</p>
+    <div class="cred-strip">
+      <span class="cred-pill">Founded Okay Pasal · 2018</span>
+      <span class="cred-pill">Diploma, Kantipur Film Academy · 2021–2023</span>
+      <span class="cred-pill">Diploma, Percept Media · 2019</span>
+    </div>
+    <div class="cta-row">
+      <a href="#contact" class="btn primary magnetic">Get in touch</a>
+      <a href="#services" class="btn">See services</a>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll ↓</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="photo">
+        <img src="assets/photos/portrait.jpg" alt="Portrait of Purushottam Adhikari" loading="lazy">
+      </div>
+      <div>
+        <div class="section-head reveal">
+          <span class="mono">About</span>
+          <h2>A builder who tells stories, and a storyteller who builds.</h2>
+        </div>
+        <p class="bio col">I started Okay Pasal in 2018 because I wanted to understand commerce from the inside — not as theory, but as a business I had to run. Since then, I've trained in film direction at Kantipur Film Academy and worked on photography and visual production at Percept Media Production. The through-line is the same in every case: understand the audience, shape the story, ship the work.</p>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-year">2018</span>
+            <div class="tl-text"><h3>Founded Okay Pasal Pvt. Ltd.</h3><p>Started and ran an e-commerce venture from the ground up — sourcing, operations, and growth.</p></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">2021–2023</span>
+            <div class="tl-text"><h3>Diploma in Film Direction, Kantipur Film Academy</h3><p>Completed a diploma in film direction — narrative structure, on-set process, and production craft.</p></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-year">2019</span>
+            <div class="tl-text"><h3>Diploma in Photography &amp; Videography, Percept Media</h3><p>Completed a diploma in photography and videography — building a practical eye for image, light, and motion.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">Services</span>
+      <h2>Five ways to work together.</h2>
+    </div>
+
+    <div class="service reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="1"/><circle cx="7" cy="9" r="1"/><circle cx="7" cy="15" r="1"/><circle cx="17" cy="9" r="1"/><circle cx="17" cy="15" r="1"/><circle cx="12" cy="12" r="2.4"/></svg>
+      <div>
+        <h3>Film</h3>
+        <ul><li>Direction for short film and narrative work</li><li>Brand and documentary-style film</li><li>On-set production consulting</li></ul>
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M16 8a4 4 0 0 1 0 8"/><path d="M19 5a8 8 0 0 1 0 14"/></svg>
+      <div>
+        <h3>Marketing</h3>
+        <ul><li>Social media strategy and content calendars</li><li>Campaign planning and execution</li><li>Paid ad direction</li></ul>
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>
+      <div>
+        <h3>Strategy</h3>
+        <ul><li>Business and go-to-market planning</li><li>Brand positioning</li><li>Venture and product strategy</li></ul>
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8l2-3h4l1.5 2H19a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+      <div>
+        <h3>Visual</h3>
+        <ul><li>Photography — product, portrait, event</li><li>Videography — event and short-form video</li><li>Photo direction</li><li>Visual identity development</li></ul>
+      </div>
+    </div>
+
+    <div class="service reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <div>
+        <h3>E-commerce</h3>
+        <ul><li>Store setup and operations</li><li>Product and catalog strategy</li><li>Digital storefront consulting</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- COURSES -->
+<section id="courses" class="mesh">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">Courses</span>
+      <h2>Learn the way I actually work.</h2>
+      <p class="bio col" style="margin-top:14px;">Four courses, built from real experience — not repackaged theory. All in development; join a waitlist below and you'll hear first when one opens.</p>
+    </div>
+
+    <div class="filter-row reveal" id="courseFilters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ai">AI</button>
+      <button class="filter-btn" data-filter="business">Business</button>
+      <button class="filter-btn" data-filter="film">Filmmaking</button>
+      <button class="filter-btn" data-filter="content">Content</button>
+    </div>
+
+    <div class="course-grid">
+      <div class="course-card reveal" data-cat="ai">
+        <span class="badge">Coming Soon</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.5 5.5l2 2M16.5 16.5l2 2M5.5 18.5l2-2M16.5 7.5l2-2"/></svg>
+        <h3>AI for Creators</h3>
+        <p class="promise">Practical AI, applied to real content and business work — not hype.</p>
+        <ul>
+          <li>Everyday AI tools that actually save time</li>
+          <li>Building your own prompt workflows</li>
+          <li>Where AI helps, and where it quietly hurts your work</li>
+          <li>Automating the boring parts of content and business</li>
+        </ul>
+        <a href="mailto:purukaka1111@gmail.com?subject=Waitlist:%20AI%20for%20Creators" class="cta">Join the waitlist →</a>
+      </div>
+
+      <div class="course-card reveal" data-cat="business">
+        <span class="badge">Coming Soon</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8l2-3h4l1.5 2H19a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <h3>Online Business Fundamentals</h3>
+        <p class="promise">What I actually did to build Okay Pasal — sourcing to first sale.</p>
+        <ul>
+          <li>Validating an idea before you spend on it</li>
+          <li>Setting up your first storefront or offer</li>
+          <li>Pricing and positioning without guesswork</li>
+          <li>Getting from zero to your first real customer</li>
+        </ul>
+        <a href="mailto:purukaka1111@gmail.com?subject=Waitlist:%20Online%20Business%20Fundamentals" class="cta">Join the waitlist →</a>
+      </div>
+
+      <div class="course-card reveal" data-cat="film">
+        <span class="badge">Coming Soon</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="1"/><circle cx="7" cy="9" r="1"/><circle cx="7" cy="15" r="1"/><circle cx="17" cy="9" r="1"/><circle cx="17" cy="15" r="1"/><circle cx="12" cy="12" r="2.4"/></svg>
+        <h3>Filmmaking &amp; Direction</h3>
+        <p class="promise">Direction fundamentals from training and real short-film work.</p>
+        <ul>
+          <li>Going from idea to a shootable shot list</li>
+          <li>Directing well on a limited budget</li>
+          <li>Story structure that actually holds a short film together</li>
+          <li>On-set workflow and talking to your crew</li>
+        </ul>
+        <a href="mailto:purukaka1111@gmail.com?subject=Waitlist:%20Filmmaking%20%26%20Direction" class="cta">Join the waitlist →</a>
+      </div>
+
+      <div class="course-card reveal" data-cat="content">
+        <span class="badge">Coming Soon</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="11" height="4" rx="1"/></svg>
+        <h3>Content Creation</h3>
+        <p class="promise">Consistency and repurposing, without burning out.</p>
+        <ul>
+          <li>Finding content pillars that fit how you actually think</li>
+          <li>Turning one idea into content for five platforms</li>
+          <li>Staying consistent without burning out</li>
+          <li>Growing an audience that actually engages back</li>
+        </ul>
+        <a href="mailto:purukaka1111@gmail.com?subject=Waitlist:%20Content%20Creation" class="cta">Join the waitlist →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- AI TIPS & PROMPTS -->
+<section id="ai-tips" class="mesh">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">AI Tips &amp; Prompts</span>
+      <h2>Prompts I actually use.</h2>
+      <p class="bio col" style="margin-top:14px;">No fluff — six prompts pulled straight from film, business, and content work. Copy one and edit the brackets.</p>
+    </div>
+
+    <div class="filter-row reveal" id="promptFilters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ai">AI</button>
+      <button class="filter-btn" data-filter="business">Business</button>
+      <button class="filter-btn" data-filter="film">Filmmaking</button>
+      <button class="filter-btn" data-filter="content">Content</button>
+    </div>
+
+    <div class="prompt-grid">
+      <div class="prompt-card reveal" data-cat="content">
+        <span class="cat">Content Creation</span>
+        <h3>Turn One Idea Into a Week of Content</h3>
+        <div class="ptext">I create content about [topic]. Take this single idea — [describe your idea] — and break it into 5 distinct pieces for [platform], each covering a different angle (a hook, a myth-bust, a how-to, a personal story, a listicle). For each, give me a headline and a 2-sentence outline.</div>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+
+      <div class="prompt-card reveal" data-cat="film">
+        <span class="cat">Filmmaking</span>
+        <h3>Short Film Treatment Builder</h3>
+        <div class="ptext">I have a short film idea: [describe premise in 1-2 sentences]. Help me build a one-page treatment: logline, 3-act beat structure (setup / turn / resolution), the central visual motif, and one scene I should shoot first as a proof-of-concept.</div>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+
+      <div class="prompt-card reveal" data-cat="business">
+        <span class="cat">Online Business</span>
+        <h3>Business Idea Stress-Test</h3>
+        <div class="ptext">Here's a business idea: [describe it]. Act as a skeptical but constructive advisor. Identify the 3 biggest assumptions this idea depends on, the cheapest way to test each one within a week, and the single most likely reason this fails.</div>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+
+      <div class="prompt-card reveal" data-cat="ai">
+        <span class="cat">AI / Productivity</span>
+        <h3>AI as a Thinking Partner</h3>
+        <div class="ptext">I'm deciding between [option A] and [option B] for [context]. Don't tell me which to pick. Instead, ask me the 5 questions I should be able to answer before I can decide well — one at a time.</div>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+
+      <div class="prompt-card reveal" data-cat="content">
+        <span class="cat">Content Creation</span>
+        <h3>One Piece, Five Platforms</h3>
+        <div class="ptext">Here's a long-form piece I wrote: [paste it]. Repurpose it into: a 3-line Instagram caption, a 6-tweet thread, a 60-second video script, and a one-paragraph newsletter blurb — keep my voice, don't add generic hype language.</div>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+
+      <div class="prompt-card reveal" data-cat="film">
+        <span class="cat">Filmmaking</span>
+        <h3>Scene Punch-Up</h3>
+        <div class="ptext">Here's a scene from my script: [paste scene]. Keep the plot exactly the same, but punch up the dialogue to feel more natural and specific to each character. Flag any line that's doing pure exposition so I can see it.</div>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- VENTURES -->
+<section id="ventures">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">Ventures</span>
+      <h2>Proof of work, on file.</h2>
+    </div>
+
+    <div class="file reveal">
+      <div class="photo"><img src="assets/photos/okay-pasal.jpg" alt="Okay Pasal e-commerce venture" loading="lazy"></div>
+      <div class="file-body">
+        <div class="file-head"><span class="file-num">File No. 01</span><span class="file-status">Status: Active</span></div>
+        <h3>Okay Pasal Pvt. Ltd.</h3>
+        <p>Founded in 2018. An e-commerce venture built and operated from the ground up — sourcing, logistics, and growth, run as a real business rather than a case study.</p>
+        <p class="meta">Type: Company · Founded 2018</p>
+      </div>
+    </div>
+
+    <div class="file reveal">
+      <div class="photo"><img src="assets/photos/short-film.jpg" alt="Short film direction still" loading="lazy"></div>
+      <div class="file-body">
+        <div class="file-head"><span class="file-num">File No. 02</span><span class="file-status">Status: Trained</span></div>
+        <h3>Short Film Direction</h3>
+        <p>Direction work developed through training at Kantipur Film Academy — narrative short-form projects focused on story structure and on-set craft.</p>
+        <p class="meta">Type: Film · Kantipur Film Academy</p>
+      </div>
+    </div>
+
+    <div class="file reveal">
+      <div class="photo"><img src="assets/photos/percept-photo.jpg" alt="Photography work at Percept Media Production" loading="lazy"></div>
+      <div class="file-body">
+        <div class="file-head"><span class="file-num">File No. 03</span><span class="file-status">Status: Completed</span></div>
+        <h3>Diploma in Photography &amp; Videography</h3>
+        <p>Diploma in photography and videography from Percept Media — building a practical command of image, light, and motion.</p>
+        <p class="meta">Type: Photography &amp; Videography · Percept Media Production</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">Gallery</span>
+      <h2>Selected frames.</h2>
+    </div>
+    <div class="masonry">
+      <div class="photo"><img src="assets/photos/gallery-1.jpg" alt="Photography sample 1" loading="lazy"></div>
+      <div class="photo"><img src="assets/photos/gallery-2.jpg" alt="Photography sample 2" loading="lazy"></div>
+      <div class="photo"><img src="assets/photos/gallery-3.jpg" alt="Photography sample 3" loading="lazy"></div>
+      <div class="photo"><img src="assets/photos/gallery-4.jpg" alt="Photography sample 4" loading="lazy"></div>
+      <div class="photo"><img src="assets/photos/gallery-5.jpg" alt="Photography sample 5" loading="lazy"></div>
+      <div class="photo"><img src="assets/photos/gallery-6.jpg" alt="Photography sample 6" loading="lazy"></div>
+      <div class="photo"><img src="assets/photos/gallery-7.jpg" alt="Photography sample 7" loading="lazy"></div>
+      <div class="photo"><img src="assets/photos/gallery-8.jpg" alt="Photography sample 8" loading="lazy"></div>
+    </div>
+    <p class="gallery-caption">A working selection — swap these for real frames from short film stills, Okay Pasal product shoots, and Percept Media work.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">Writing</span>
+      <h2>Notes, published elsewhere.</h2>
+    </div>
+    <p class="bio col" style="margin-bottom:8px;">Writing lives on adhikaripurushottam.com.np — this is a live index, not a copy.</p>
+
+    <!-- BLOG:START -->
+    <a href="https://www.adhikaripurushottam.com.np/2025/04/creative-business-services.html" class="post" target="_blank" rel="noopener">
+      <div class="photo"><img src="assets/photos/writing-archive.jpg" alt="" loading="lazy"></div>
+      <span class="post-title">Creative &amp; Business Services — the full breakdown</span>
+      <span class="post-date">Apr 2025</span>
+    </a>
+    <a href="https://www.adhikaripurushottam.com.np/2025/04/about-me.html" class="post" target="_blank" rel="noopener">
+      <div class="photo"><img src="assets/photos/writing-archive.jpg" alt="" loading="lazy"></div>
+      <span class="post-title">A Journey of Creativity and Strategy</span>
+      <span class="post-date">Apr 2025</span>
+    </a>
+    <a href="https://www.adhikaripurushottam.com.np/2025/04/my-spiritual-journey-to-kedarnath-from.html" class="post" target="_blank" rel="noopener">
+      <div class="photo"><img src="assets/photos/writing-archive.jpg" alt="" loading="lazy"></div>
+      <span class="post-title">My Spiritual Journey to Kedarnath from Kathmandu</span>
+      <span class="post-date">Apr 2025</span>
+    </a>
+    <!-- add real post entries here in this format:
+    <a href="POST-URL" class="post" target="_blank" rel="noopener">
+      <div class="photo"><img src="POST-IMAGE" alt=""></div>
+      <span class="post-title">POST TITLE</span>
+      <span class="post-date">MONTH YYYY</span>
+    </a>
+    -->
+    <!-- BLOG:END -->
+
+    <a href="https://adhikaripurushottam.com.np" class="archive-link" target="_blank" rel="noopener">Full archive →</a>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- BOOK A CALL -->
+<section id="booking">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">Book a Call</span>
+      <h2>See real availability, book directly.</h2>
+      <p class="bio col" style="margin-top:14px;">This calendar is live — it reflects real free/busy time and confirms instantly, so there's no back-and-forth over email.</p>
+    </div>
+
+    <div class="setup-note reveal" style="margin-bottom:20px;">
+      SETUP NEEDED: this embed points to a placeholder Cal.com link. Create a free account at
+      cal.com, connect your Google Calendar so free/busy is real, create an event type, then
+      replace "YOUR-CALCOM-USERNAME/consultation" below (search for it in this file) with your
+      real link. Until then this section shows a fallback message instead of a fake calendar.
+    </div>
+
+    <div class="booking-frame reveal">
+      <div id="cal-inline-embed" style="width:100%; height:600px; overflow:auto;"></div>
+      <div class="booking-fallback" id="bookingFallback">
+        <span class="mono">Calendar not connected yet</span>
+        <h3 style="font-size:20px;">Booking isn't wired up yet</h3>
+        <p>The site owner hasn't connected a live calendar here yet. In the meantime, reach out directly:</p>
+        <a href="mailto:purukaka1111@gmail.com?subject=Let's%20talk" class="btn" style="border-color:var(--ink); color:var(--ink);">Email instead →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="mono">Contact</span>
+      <h2>Start a conversation.</h2>
+    </div>
+    <a href="mailto:purukaka1111@gmail.com" class="contact-email">purukaka1111@gmail.com</a>
+    <div class="social-row">
+      <a href="https://instagram.com/1purukaka" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@1purukaka" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://facebook.com/1purukaka" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://twitter.com/1purukaka" target="_blank" rel="noopener">Twitter</a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<footer>
+  <div class="wrap">
+    <span class="mono">© <span id="year"></span> Purushottam Adhikari</span>
+    <span class="mono">Puru Kaka — purukaka.com</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">Close ✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => {
+    if (window.scrollY > 60) nav.classList.add('solid');
+    else nav.classList.remove('solid');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile hamburger nav
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  const navScrim = document.getElementById('navScrim');
+  function closeNav(){
+    navToggle.classList.remove('open');
+    navLinks.classList.remove('open');
+    navScrim.classList.remove('open');
+    navToggle.setAttribute('aria-expanded','false');
+  }
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navScrim.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  navScrim.addEventListener('click', closeNav);
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+  // Scroll-reveal animation
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+
+  // Copy-to-clipboard for prompt cards
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const text = btn.previousElementSibling.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (e) {
+        // fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1600);
+    });
+  });  // Category filter tabs (Courses + Prompts)
+  function wireFilters(rowId, gridSelector, cardSelector){
+    const row = document.getElementById(rowId);
+    if (!row) return;
+    row.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll(gridSelector + ' ' + cardSelector).forEach(card => {
+          const show = filter === 'all' || card.dataset.cat === filter;
+          card.classList.toggle('hide', !show);
+        });
+      });
+    });
+  }
+  wireFilters('courseFilters', '.course-grid', '.course-card');
+  wireFilters('promptFilters', '.prompt-grid', '.prompt-card');
+
+  // Gallery lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.masonry .photo img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+  function closeLightbox(){ lightbox.classList.remove('open'); lightboxImg.src=''; }
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  // Subtle hero parallax (disabled if reduced-motion preferred)
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    const heroImg = document.querySelector('.hero .photo img');
+    if (heroImg) {
+      window.addEventListener('scroll', () => {
+        const offset = window.scrollY;
+        if (offset < window.innerHeight) {
+          heroImg.style.transform = `translateY(${offset * 0.15}px) scale(1.08)`;
+        }
+      }, { passive: true });
+    }
+  }
+
+  // Hero 3D mouse-tilt (desktop only — devices with a real mouse/hover)
+  const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!prefersReducedMotion && hasFinePointer) {
+    const heroSection = document.getElementById('heroSection');
+    const heroPhotoLayer = document.getElementById('heroPhotoLayer');
+    const heroContent = document.getElementById('heroContent');
+    if (heroSection && heroPhotoLayer && heroContent) {
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;   // -0.5 .. 0.5
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        heroPhotoLayer.style.transform = `rotateX(${(-py * 6).toFixed(2)}deg) rotateY(${(px * 8).toFixed(2)}deg) scale(1.06)`;
+        heroContent.style.transform = `translate3d(${(px * -14).toFixed(1)}px, ${(py * -8).toFixed(1)}px, 0)`;
+      });
+      heroSection.addEventListener('mouseleave', () => {
+        heroPhotoLayer.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+        heroContent.style.transform = 'translate3d(0,0,0)';
+      });
+    }
+  }
+
+  // Hero particle canvas — drifting light specks, like dust/grain in a lit room (film-set feel)
+  if (!prefersReducedMotion) {
+    const canvas = document.getElementById('heroParticles');
+    if (canvas && canvas.getContext) {
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let animId = null;
+      const PARTICLE_COUNT = window.innerWidth < 700 ? 22 : 45;
+
+      function resizeCanvas() {
+        const stage = document.getElementById('hero3dStage');
+        canvas.width = stage.clientWidth;
+        canvas.height = stage.clientHeight;
+      }
+
+      function makeParticle() {
+        return {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.8 + 0.4,          // radius = simulated depth (near=big, far=small)
+          speed: Math.random() * 0.18 + 0.03,
+          drift: (Math.random() - 0.5) * 0.15,
+          alpha: Math.random() * 0.5 + 0.15,
+        };
+      }
+
+      function initParticles() {
+        particles = Array.from({ length: PARTICLE_COUNT }, makeParticle);
+      }
+
+      function tick() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          p.y -= p.speed;
+          p.x += p.drift;
+          if (p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(247,245,239,${p.alpha})`;
+          ctx.fill();
+        });
+        animId = requestAnimationFrame(tick);
+      }
+
+      resizeCanvas();
+      initParticles();
+      tick();
+
+      window.addEventListener('resize', () => {
+        resizeCanvas();
+      }, { passive: true });
+
+      // pause when hero scrolls out of view (saves battery/CPU)
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && animId === null) { tick(); }
+          else if (!entry.isIntersecting && animId !== null) { cancelAnimationFrame(animId); animId = null; }
+        });
+      }, { threshold: 0 });
+      heroObserver.observe(document.getElementById('heroSection'));
+    }
+  }
+
+  // 3D tilt-on-hover for Course and Prompt cards
+  if (!prefersReducedMotion && hasFinePointer) {
+    document.querySelectorAll('.course-card, .prompt-card').forEach(card => {
+      card.style.transformStyle = 'preserve-3d';
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(700px) rotateX(${(-py * 5).toFixed(2)}deg) rotateY(${(px * 6).toFixed(2)}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // Cal.com booking embed — only initializes once a real calLink is set
+  const CAL_LINK = "YOUR-CALCOM-USERNAME/consultation";
+  if (!CAL_LINK.includes("YOUR-CALCOM-USERNAME")) {
+    document.getElementById('cal-inline-embed').style.display = 'block';
+    document.getElementById('bookingFallback').style.display = 'none';
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", { origin: "https://cal.com" });
+    Cal("inline", { elementOrSelector: "#cal-inline-embed", calLink: CAL_LINK });
+    Cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+  }
+
+  // Scroll progress bar
+  (function(){
+    const bar = document.getElementById('scrollProgress');
+    const update = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      bar.style.width = scrolled + '%';
+    };
+    window.addEventListener('scroll', update, { passive:true });
+    update();
+  })();
+
+  // Cursor glow trail (additive, keeps native cursor for UX cues like zoom-in)
+  if (!prefersReducedMotion && hasFinePointer) {
+    const glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    document.body.appendChild(glow);
+    let gx = 0, gy = 0, mx = 0, my = 0;
+    window.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+    (function loop(){
+      gx += (mx - gx) * 0.16; gy += (my - gy) * 0.16;
+      glow.style.left = gx + 'px'; glow.style.top = gy + 'px';
+      requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll('a, button, .photo, .course-card, .prompt-card').forEach(el => {
+      el.addEventListener('mouseenter', () => glow.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => glow.classList.remove('hovering'));
+    });
+  }
+
+  // 3D tilt on venture ("file") photos, matching course/prompt card tilt
+  if (!prefersReducedMotion && hasFinePointer) {
+    document.querySelectorAll('.file .photo').forEach(photo => {
+      photo.addEventListener('mousemove', (e) => {
+        const rect = photo.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        photo.style.transform = `perspective(700px) rotateX(${(-py * 6).toFixed(2)}deg) rotateY(${(px * 7).toFixed(2)}deg)`;
+      });
+      photo.addEventListener('mouseleave', () => { photo.style.transform = ''; });
+    });
+  }
+
+  // Magnetic pull on primary CTA button
+  if (!prefersReducedMotion && hasFinePointer) {
+    document.querySelectorAll('.magnetic').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const mx2 = e.clientX - rect.left - rect.width / 2;
+        const my2 = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${mx2 * 0.25}px, ${my2 * 0.35}px)`;
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  // Three.js — subtle floating wireframe shapes in the hero, adding real depth
+  // behind the drifting dust particles. Very low opacity, additive blend, so it
+  // reads as a soft glint rather than a tech-demo effect.
+  if (!prefersReducedMotion && window.THREE) {
+    const canvas3d = document.getElementById('hero3dCanvas');
+    const stage = document.getElementById('hero3dStage');
+    if (canvas3d && stage) {
+      const renderer = new THREE.WebGLRenderer({ canvas: canvas3d, alpha: true, antialias: true });
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, stage.clientWidth / stage.clientHeight, 0.1, 100);
+      camera.position.z = 8;
+
+      function resize3d(){
+        const w = stage.clientWidth, h = stage.clientHeight;
+        renderer.setSize(w, h);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+      }
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      resize3d();
+      window.addEventListener('resize', resize3d, { passive:true });
+
+      const gold = 0xB8863B;
+      const shapes = [];
+      [
+        new THREE.IcosahedronGeometry(1.3, 0),
+        new THREE.TorusGeometry(1, 0.3, 8, 24),
+        new THREE.OctahedronGeometry(0.9, 0)
+      ].forEach((geo, i) => {
+        const mat = new THREE.MeshBasicMaterial({ color: gold, wireframe: true, transparent: true, opacity: 0.5 });
+        const mesh = new THREE.Mesh(geo, mat);
+        mesh.position.set(2.6 - i * 2.4, i % 2 === 0 ? 1.2 : -1.4, -1.5 - i * 0.8);
+        mesh.userData.speed = 0.2 + i * 0.06;
+        scene.add(mesh);
+        shapes.push(mesh);
+      });
+
+      let tmx = 0, tmy = 0;
+      stage.addEventListener('mousemove', (e) => {
+        const rect = stage.getBoundingClientRect();
+        tmx = (e.clientX - rect.left) / rect.width - 0.5;
+        tmy = (e.clientY - rect.top) / rect.height - 0.5;
+      });
+
+      let running = true;
+      function animate3d(){
+        if (!running) return;
+        requestAnimationFrame(animate3d);
+        shapes.forEach(s => {
+          s.rotation.x += 0.0018 * s.userData.speed * 10;
+          s.rotation.y += 0.0026 * s.userData.speed * 10;
+        });
+        camera.position.x += (tmx * 1.1 - camera.position.x) * 0.03;
+        camera.position.y += (-tmy * 1.1 - camera.position.y) * 0.03;
+        camera.lookAt(0, 0, 0);
+        renderer.render(scene, camera);
+      }
+      animate3d();
+
+      // pause when hero is out of view (matches particle canvas behavior)
+      const stage3dObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !running) { running = true; animate3d(); }
+          else if (!entry.isIntersecting) { running = false; }
+        });
+      }, { threshold: 0 });
+      stage3dObserver.observe(document.getElementById('heroSection'));
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Dashboard — Puru Kaka</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F7F5EF; --ink:#1C1B17; --green:#33513F;
+    --muted:#7A776C; --hairline:#DEDACD; --field:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Inter',sans-serif; font-size:15px; line-height:1.5;
+  }
+  header{padding:28px 32px; border-bottom:1px solid var(--hairline); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  header h1{font-family:'Fraunces',serif; font-weight:500; font-size:20px; margin:0;}
+  header .sub{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted);}
+  .layout{display:flex; max-width:1100px; margin:0 auto;}
+  nav.tabs{width:180px; padding:32px 0; flex-shrink:0;}
+  nav.tabs button{
+    display:block; width:100%; text-align:left; background:none; border:none;
+    padding:12px 24px; font-family:'IBM Plex Mono',monospace; font-size:12px;
+    text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); cursor:pointer;
+    border-left:2px solid transparent;
+  }
+  nav.tabs button.active{color:var(--ink); border-left-color:var(--green); background:rgba(51,81,63,0.06);}
+  nav.tabs button:hover{color:var(--ink);}
+  main{flex:1; padding:32px; min-width:0;}
+  .panel{display:none;}
+  .panel.active{display:block;}
+  .panel h2{font-family:'Fraunces',serif; font-weight:500; font-size:22px; margin:0 0 6px;}
+  .panel .desc{color:var(--muted); font-size:13px; margin-bottom:24px;}
+
+  .card{
+    background:var(--field); border:1px solid var(--hairline); border-radius:4px;
+    padding:20px; margin-bottom:16px;
+  }
+  .card-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;}
+  .card-head .tag{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); text-transform:uppercase;}
+  .card-head button.del{
+    background:none; border:1px solid var(--hairline); color:var(--muted);
+    font-family:'IBM Plex Mono',monospace; font-size:11px; padding:4px 10px;
+    cursor:pointer; border-radius:3px;
+  }
+  .card-head button.del:hover{border-color:#b33; color:#b33;}
+
+  label{display:block; font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); margin-bottom:4px; margin-top:12px;}
+  label:first-of-type{margin-top:0;}
+  input, textarea{
+    width:100%; padding:9px 10px; border:1px solid var(--hairline); border-radius:3px;
+    font-family:'Inter',sans-serif; font-size:14px; background:#fff; color:var(--ink);
+  }
+  textarea{resize:vertical; min-height:60px;}
+  input:focus, textarea:focus{outline:2px solid var(--green); outline-offset:1px; border-color:var(--green);}
+
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  ul.sublist{margin:0; padding:0; list-style:none;}
+  ul.sublist li{display:flex; gap:8px; margin-bottom:6px;}
+  ul.sublist li input{flex:1;}
+  ul.sublist li button{background:none; border:1px solid var(--hairline); border-radius:3px; color:var(--muted); cursor:pointer; padding:0 10px; font-size:14px;}
+  .add-sub{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--green); background:none; border:none; cursor:pointer; margin-top:6px; padding:0;}
+
+  .btn-row{display:flex; gap:10px; margin-top:20px;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em;
+    padding:10px 18px; border:1px solid var(--ink); background:none; color:var(--ink); cursor:pointer; border-radius:3px;
+  }
+  .btn:hover{background:var(--ink); color:var(--paper);}
+  .btn.primary{background:var(--green); border-color:var(--green); color:#fff;}
+  .btn.primary:hover{background:var(--ink); border-color:var(--ink);}
+
+  .export-box{margin-top:28px;}
+  .export-box h3{font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); margin-bottom:10px;}
+  pre{
+    background:#1C1B17; color:#E9E6DC; padding:18px; border-radius:4px; overflow-x:auto;
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.6; white-space:pre-wrap; word-break:break-word;
+  }
+  .save-note{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted); margin-top:6px;}
+  .save-note.show{color:var(--green);}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Content Dashboard</h1>
+    <span class="sub">Staging area — not connected to the live site</span>
+  </div>
+  <span class="sub" id="saveIndicator">All changes saved</span>
+</header>
+
+<div class="layout">
+  <nav class="tabs">
+    <button class="active" data-tab="services">Services</button>
+    <button data-tab="ventures">Ventures</button>
+    <button data-tab="blog">Blog Posts</button>
+    <button data-tab="help">How this works</button>
+  </nav>
+
+  <main>
+    <!-- SERVICES PANEL -->
+    <section class="panel active" id="panel-services">
+      <h2>Services</h2>
+      <p class="desc">Each service becomes a numbered entry on the site. Add sub-offerings as a bullet list.</p>
+      <div id="servicesList"></div>
+      <div class="btn-row">
+        <button class="btn" onclick="addService()">+ Add service</button>
+      </div>
+      <div class="export-box">
+        <h3>HTML to paste between &lt;!-- SERVICES:START --&gt; and &lt;!-- SERVICES:END --&gt; in index.html</h3>
+        <pre id="servicesExport"></pre>
+      </div>
+    </section>
+
+    <!-- VENTURES PANEL -->
+    <section class="panel" id="panel-ventures">
+      <h2>Ventures</h2>
+      <p class="desc">Each entry renders as a case file — file number, status, title, description.</p>
+      <div id="venturesList"></div>
+      <div class="btn-row">
+        <button class="btn" onclick="addVenture()">+ Add venture</button>
+      </div>
+      <div class="export-box">
+        <h3>HTML to paste between &lt;!-- VENTURES:START --&gt; and &lt;!-- VENTURES:END --&gt; in index.html</h3>
+        <pre id="venturesExport"></pre>
+      </div>
+    </section>
+
+    <!-- BLOG PANEL -->
+    <section class="panel" id="panel-blog">
+      <h2>Blog Posts</h2>
+      <p class="desc">These link out to adhikaripurushottam.com.np — content isn't duplicated, only indexed.</p>
+      <div id="blogList"></div>
+      <div class="btn-row">
+        <button class="btn" onclick="addPost()">+ Add post link</button>
+      </div>
+      <div class="export-box">
+        <h3>HTML to paste between &lt;!-- BLOG:START --&gt; and &lt;!-- BLOG:END --&gt; in index.html</h3>
+        <pre id="blogExport"></pre>
+      </div>
+    </section>
+
+    <!-- HELP PANEL -->
+    <section class="panel" id="panel-help">
+      <h2>How this works</h2>
+      <p class="desc" style="max-width:60ch; line-height:1.7;">
+        This dashboard is a staging area, not a live publishing tool. Everything you type here saves automatically to this browser as you go — reopen the file later and it's still here.<br><br>
+        When you're ready to update the real site: open a tab, copy the generated HTML block from the bottom of each panel, then paste it into <code>index.html</code> between the matching <code>&lt;!-- START --&gt;</code> / <code>&lt;!-- END --&gt;</code> comment markers for that section. Save and re-upload <code>index.html</code> wherever purukaka.com is hosted.<br><br>
+        Note: because this saves to browser storage, it's local to whichever browser and device you're using it in — it won't sync across devices on its own.
+      </p>
+    </section>
+  </main>
+</div>
+
+<script>
+const STORE_KEY = 'purukaka_dashboard_v1';
+
+let state = {
+  services: [
+    {title:'Film', items:['Direction for short film and narrative work','Brand and documentary-style film','On-set production consulting']},
+    {title:'Marketing', items:['Social media strategy and content calendars','Campaign planning and execution','Paid ad direction']},
+    {title:'Strategy', items:['Business and go-to-market planning','Brand positioning','Venture and product strategy']},
+    {title:'Visual', items:['Photography — product, portrait, event','Photo direction','Visual identity development']},
+    {title:'E-commerce', items:['Store setup and operations','Product and catalog strategy','Digital storefront consulting']}
+  ],
+  ventures: [
+    {num:'File No. 01', status:'Status: Active', title:'Okay Pasal Pvt. Ltd.', desc:'Founded in 2018. An e-commerce venture built and operated from the ground up.', meta:'Type: Company · Founded 2018'},
+    {num:'File No. 02', status:'Status: Trained', title:'Short Film Direction', desc:'Direction work developed through training at Kantipur Film Academy.', meta:'Type: Film · Kantipur Film Academy'},
+    {num:'File No. 03', status:'Status: Completed', title:'Diploma in Photography & Videography', desc:'Diploma in photography and videography from Percept Media.', meta:'Type: Photography & Videography · Percept Media Production'}
+  ],
+  blog: [
+    {title:'Latest posts on adhikaripurushottam.com.np', url:'https://adhikaripurushottam.com.np', date:'Visit →'}
+  ]
+};
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORE_KEY);
+    if(raw) state = JSON.parse(raw);
+  }catch(e){ console.warn('Could not load saved data, using defaults.', e); }
+}
+
+function saveState(){
+  try{
+    localStorage.setItem(STORE_KEY, JSON.stringify(state));
+    const el = document.getElementById('saveIndicator');
+    el.textContent = 'Saved just now';
+    el.classList.add('show');
+    setTimeout(()=>{ el.textContent='All changes saved'; }, 1500);
+  }catch(e){ console.error('Save failed', e); }
+}
+
+function esc(str){
+  return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ---------- SERVICES ---------- */
+function renderServices(){
+  const wrap = document.getElementById('servicesList');
+  wrap.innerHTML = '';
+  state.services.forEach((s, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-head">
+        <span class="tag">Service ${String(i+1).padStart(2,'0')}</span>
+        <button class="del" onclick="removeService(${i})">Remove</button>
+      </div>
+      <label>Title</label>
+      <input value="${esc(s.title)}" oninput="state.services[${i}].title=this.value; renderServices();">
+      <label>Sub-offerings</label>
+      <ul class="sublist">
+        ${s.items.map((it,j)=>`<li>
+          <input value="${esc(it)}" oninput="state.services[${i}].items[${j}]=this.value; syncExports(); saveState();">
+          <button onclick="state.services[${i}].items.splice(${j},1); renderServices(); saveState();">×</button>
+        </li>`).join('')}
+      </ul>
+      <button class="add-sub" onclick="state.services[${i}].items.push(''); renderServices();">+ Add sub-offering</button>
+    `;
+    wrap.appendChild(card);
+  });
+  syncExports();
+}
+function addService(){ state.services.push({title:'New service', items:['']}); renderServices(); saveState(); }
+function removeService(i){ state.services.splice(i,1); renderServices(); saveState(); }
+
+/* ---------- VENTURES ---------- */
+function renderVentures(){
+  const wrap = document.getElementById('venturesList');
+  wrap.innerHTML = '';
+  state.ventures.forEach((v, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-head">
+        <span class="tag">Venture ${i+1}</span>
+        <button class="del" onclick="removeVenture(${i})">Remove</button>
+      </div>
+      <div class="row2">
+        <div><label>File number</label><input value="${esc(v.num)}" oninput="state.ventures[${i}].num=this.value; syncExports(); saveState();"></div>
+        <div><label>Status</label><input value="${esc(v.status)}" oninput="state.ventures[${i}].status=this.value; syncExports(); saveState();"></div>
+      </div>
+      <label>Title</label>
+      <input value="${esc(v.title)}" oninput="state.ventures[${i}].title=this.value; syncExports(); saveState();">
+      <label>Description</label>
+      <textarea oninput="state.ventures[${i}].desc=this.value; syncExports(); saveState();">${esc(v.desc)}</textarea>
+      <label>Meta line (type / detail)</label>
+      <input value="${esc(v.meta)}" oninput="state.ventures[${i}].meta=this.value; syncExports(); saveState();">
+    `;
+    wrap.appendChild(card);
+  });
+  syncExports();
+}
+function addVenture(){
+  const n = state.ventures.length+1;
+  state.ventures.push({num:`File No. ${String(n).padStart(2,'0')}`, status:'Status: —', title:'New venture', desc:'', meta:''});
+  renderVentures(); saveState();
+}
+function removeVenture(i){ state.ventures.splice(i,1); renderVentures(); saveState(); }
+
+/* ---------- BLOG ---------- */
+function renderBlog(){
+  const wrap = document.getElementById('blogList');
+  wrap.innerHTML = '';
+  state.blog.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-head">
+        <span class="tag">Post ${i+1}</span>
+        <button class="del" onclick="removePost(${i})">Remove</button>
+      </div>
+      <label>Title</label>
+      <input value="${esc(p.title)}" oninput="state.blog[${i}].title=this.value; syncExports(); saveState();">
+      <label>URL (on adhikaripurushottam.com.np)</label>
+      <input value="${esc(p.url)}" oninput="state.blog[${i}].url=this.value; syncExports(); saveState();">
+      <label>Date label</label>
+      <input value="${esc(p.date)}" oninput="state.blog[${i}].date=this.value; syncExports(); saveState();">
+    `;
+    wrap.appendChild(card);
+  });
+  syncExports();
+}
+function addPost(){ state.blog.push({title:'New post title', url:'https://adhikaripurushottam.com.np/', date:'Mon YYYY'}); renderBlog(); saveState(); }
+function removePost(i){ state.blog.splice(i,1); renderBlog(); saveState(); }
+
+/* ---------- EXPORT GENERATORS ---------- */
+function syncExports(){
+  document.getElementById('servicesExport').textContent = state.services.map((s,i)=>
+`    <div class="service">
+      <span class="num">${String(i+1).padStart(2,'0')}</span>
+      <div>
+        <h3>${s.title}</h3>
+        <ul>
+${s.items.map(it=>`          <li>${it}</li>`).join('\n')}
+        </ul>
+      </div>
+    </div>`).join('\n');
+
+  document.getElementById('venturesExport').textContent = state.ventures.map(v=>
+`    <div class="file">
+      <div class="file-head">
+        <span class="file-num">${v.num}</span>
+        <span class="file-status">${v.status}</span>
+      </div>
+      <h3>${v.title}</h3>
+      <p>${v.desc}</p>
+      <p class="meta">${v.meta}</p>
+    </div>`).join('\n\n');
+
+  document.getElementById('blogExport').textContent = state.blog.map(p=>
+`    <a href="${p.url}" class="post" target="_blank" rel="noopener">
+      <span class="post-title">${p.title}</span>
+      <span class="post-date">${p.date}</span>
+    </a>`).join('\n');
+
+  saveState();
+}
+
+/* ---------- TABS ---------- */
+document.querySelectorAll('nav.tabs button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
+  });
+});
+
+/* ---------- INIT ---------- */
+loadState();
+renderServices();
+renderVentures();
+renderBlog();
+</script>
+
+</body>
+</html>
